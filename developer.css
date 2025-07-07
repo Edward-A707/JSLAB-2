@@ -1,0 +1,254 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Merriweather', serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1E1E1E;
+  color: #f0f0f0;
+}
+
+h1, h2, h3, nav a {
+  font-family: 'Lato', sans-serif;
+  color: #f0f0f0;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #111;
+  padding: 15px 30px;
+  text-align: center;
+}
+
+nav a {
+  color: #f5f5f5;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ff4081;
+}
+
+/* Header */
+.header {
+  background-color: #212121;
+  color: #fff;
+  padding: 30px 10px;
+  text-align: center;
+  border-bottom: 3px solid #E94560;
+}
+
+/* Flip Card */
+.lead-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+}
+
+.flip-card-front {
+  text-align: center;
+}
+
+.flip-card-back {
+  background-color: #E94560;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card-front img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+/* Developer Team Cards */
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.card {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: 0.3s ease-in-out;
+  color: #f0f0f0;
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Forms */
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: #2a2a2a;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+form label {
+  font-weight: bold;
+  color: #f0f0f0;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background-color: #1E1E1E;
+  color: #f0f0f0;
+}
+
+form input[type="submit"] {
+  background-color: #E94560;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+form input[type="submit"]:hover {
+  background-color: #c83048;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Captions */
+.caption {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #C0C0C0;
+}
+
+/* Contact Page Styling */
+.contact-main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  color: #f0f0f0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info {
+  margin-bottom: 30px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.contact-info strong {
+  color: #E94560;
+}
+
+.contact-main img {
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.contact-main img:hover {
+  transform: scale(1.05);
+}
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode nav {
+  background-color: #000000 !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .header,
+body.dark-mode .contact-main,
+body.dark-mode form,
+body.dark-mode .gallery,
+body.dark-mode .team,
+body.dark-mode .flip-card-front,
+body.dark-mode .flip-card-back {
+  background-color: #1e1e1e !important;
+  color: #f0f0f0 !important;
+}
+
+body.dark-mode a {
+  color: #ff4081 !important;
+}
