@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercedes Home - Carmania</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="developer.css">
+</head>
+<body>
+   <script>
+    // Displaying message using window.alert()
+    window.alert("Welcome visitor! Local time is displayed on the page.");
+  </script>
+
+  <div style="text-align:center; margin: 30px 0;">
+  <h2 id="clock" style="font-size: 24px; margin-bottom: 10px;">Loading time...</h2>
+
+  <label for="timezone">Select Time Zone:</label>
+  <select id="timezone">
+    <option value="Africa/Nairobi">Nairobi</option>
+    <option value="Europe/London">London</option>
+    <option value="America/New_York">New York</option>
+    <option value="Asia/Tokyo">Tokyo</option>
+    <option value="UTC">UTC</option>
+  </select>
+
+  <br><br>
+  <button id="darkModeToggle">🌓 Toggle Dark Mode</button>
+
+</div>
+
+  <!-- Hero Header -->
+  <header class="simple-hero">
+    <div>
+      <h1>Welcome to Mercedes Showroom</h1>
+      <p>Explore the iconic G-Wagon and more top-class models.</p>
+      <nav>
+        <a href="carmania.html">Home</a>
+        <a href="buy.html">Buy</a>
+        <a href="contact.html">Contact</a>
+        <a href="developer.html">Developers</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section: Our Top Cars -->
+  <section>
+    <h2 class="section-title">Our Top Cars</h2>
+    <div class="gallery">
+      <div>
+        <img src="C-CLASS.jpg" alt="C-Class">
+        <div class="caption">Mercedes C-Class</div>
+      </div>
+      <div>
+        <img src="E-CLASS.jpg" alt="E-Class">
+        <div class="caption">Mercedes E-Class</div>
+      </div>
+      <div>
+        <img src="GLE.jpg" alt="GLE">
+        <div class="caption">Mercedes GLE</div>
+      </div>
+    </div>
+  </section>
+  <script src="tutorial.js"></script>
+
+</body>
+</html>
