@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy a Mercedes - Carmania</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="developer.css">
+  <script>
+    function validateForm(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const color = document.getElementById("color").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+      const age = parseInt(document.getElementById("age").value);
+      const accountType = document.getElementById("accountType").value;
+
+      const nameRegex = /^[A-Za-z\s]+$/;
+      const phoneRegex = /^\+?[0-9]{10,15}$/;
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
+
+      if (!nameRegex.test(name)) {
+        alert("Name must only contain alphabetic characters and spaces.");
+        return;
+      }
+
+      if (!phoneRegex.test(phone)) {
+        alert("Enter a valid phone number.");
+        return;
+      }
+
+      if (isNaN(age) || age < 18) {
+        alert("You must be at least 18 years old to register.");
+        return;
+      }
+
+      if (!passwordRegex.test(password)) {
+        alert("Password must contain uppercase, lowercase, number, and special character.");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+      }
+
+      // Save user data
+      const userData = {
+        name: name,
+        email: email,
+        phone: phone,
+        color: color || "Not specified",
+        age: age,
+        accountType: accountType
+      };
+      localStorage.setItem("carmaniaUser", JSON.stringify(userData));
+
+      // Mercedes of the Day (fun feature)
+      const cars = [
+        "Mercedes-AMG G63",
+        "Mercedes-Benz S-Class",
+        "Mercedes-AMG GT Coupe",
+        "Mercedes EQA Electric",
+        "Mercedes-Maybach GLS 600"
+      ];
+      const randomPick = cars[Math.floor(Math.random() * cars.length)];
+
+      // Show confirmation message
+      alert(`🎉 Welcome to Carmania, ${name}!\n\nYou have successfully registered as a ${accountType}.\nYour preferred car color: ${color || "Not specified"}\n\n🔥 Mercedes Pick of the Day: ${randomPick}\n\nRedirecting you to the main page in a few seconds...`);
+
+      // Redirect after 3 seconds
+      setTimeout(() => {
+        window.location.href = "carmania.html";
+      }, 3000);
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1 style="text-align:center">Register to Buy</h1>
+    <nav style="text-align:center">
+      <a href="carmania.html">Home</a>
+      <a href="buy.html">Buy</a>
+      <a href="contact.html">Contact</a>
+      <a href="developer.html">Developers</a>
+    </nav>
+  </header>
+
+  <main style="padding: 40px 20px; max-width: 600px; margin: auto;">
+    <form onsubmit="validateForm(event)">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required>
+
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" required>
+
+     <!-- Account Type Dropdown -->
+<label for="accountType">Account Type:</label>
+<select id="accountType">
+  <option value="student">Student</option>
+  <option value="enthusiast">Enthusiast</option>
+  <option value="customer">Customer</option>
+  <option value="bidder">Bidder</option>
+</select>
+
+
+      <label for="color">Preferred Color:</label>
+      <input type="text" id="color" placeholder="e.g., Black, Silver, Red">
+
+      <input type="submit" value="Register">
+    </form>
+  </main>
+</body>
+</html>
